@@ -1,30 +1,22 @@
+import 'package:chorus_app/view/home_screen.dart';
+import 'package:chorus_app/view/loading_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Chorus-App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      initialRoute: LoadingScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (context) => HomeScreen(),
+        LoadingScreen.routeName: (context) => LoadingScreen()
+      },
     );
   }
 }
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({ Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
-    );
-  }
-}
-
